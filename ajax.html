@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Console App</title>
+    <!--<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' type='text/css'>-->
+    <!--<link rel='stylesheet' href='stylesheet.css' type='text/css'>-->
+</head>
+<body>
+    <h1>Console App</h1>
+    <div class="imgDiv"></div>
+
+    <script src='http://code.jquery.com/jquery-3.2.1.js' integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=' crossorigin='anonymous'></script> 
+    <!--<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>-->
+    <script type='text/javascript'> //lets start OUR javascript
+
+    var searchString = "cats"; //saving a value cats to my variable searchString
+
+    var ajaxSettings = { //creating a made up object to hold my settings
+        url: "http://api.giphy.com/v1/gifs/search", 
+        method: "GET",
+        data: { //I read the GIPHY docs for all the required parameters below
+            api_key: "209e515278ac4bcdb98c22683f76bc86",
+            q: searchString, //here I reference that variable, this may as well say q: 'cats' in this example
+            limit: 5 //this one is optional/not required. The default results will give me 25, I have it set here to only give me 5
+        }
+    }
+
+    $.ajax(ajaxSettings) //making the ajax call by passing my settings object to it. I'm asking for info to be returned based on my request
+    .done(function(results){ //this will once the giphy server collects and sends me the information I want, it gets saved in this results variable, it could be called anything
+        console.log("all the data:", results); //Here I am console logging ALL of my results with a personal message
+        console.log("just the array:", results.data);
+        console.log("just the first item in the array:", results.data[0]);
+        console.log("just the first item in the array's gif rating:", results.data[0].rating)
+
+        //what if I want to add a gif to my page?
+
+        $(".imgDiv").html("<img src=" + results.data[0].images.original.url + "></img>")
+
+    })
+
+
+
+
+    //what if I don't want to create a seperate ajaxSettings object then pass it in? that looks different to me...
+    //then do this, it's really identical:
+    /*
+    $.ajax({ //creating a made up object to hold my settings
+        url: "http://api.giphy.com/v1/gifs/search", 
+        method: "GET",
+        data: { //I read the GIPHY docs for all the required parameters below
+            api_key: "209e515278ac4bcdb98c22683f76bc86",
+            q: searchString, //here I reference that variable, this may as well say q: 'cats' in this example
+            limit: 5 //this one is optional/not required. The default results will give me 25, I have it set here to only give me 5
+        }) //making the ajax call by passing my settings object to it. I'm asking for info to be returned based on my request
+    .done(function(results){ //this will once the giphy server collects and sends me the information I want, it gets saved in this results variable, it could be called anything
+        console.log("all the data:", results); //Here I am console logging ALL of my results with a personal message
+        console.log("just the array:", results.data);
+        console.log("just the first item in the array:", results.data[0]);
+        console.log("just the first item in the array's gif rating:", results.data[0].rating)
+
+        //what if I want to add a gif to my page?
+
+        $(".imgDiv").html("<img src=" + results.data[0].images.original.url + "></img>")
+
+    })
+    */
+
+    </script>
+</body>
+</html>
