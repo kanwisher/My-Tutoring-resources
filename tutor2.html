@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Console App</title>
+<style type="text/css">
+	body {
+		background: #2bd048;
+	}
+
+	#clock {
+		text-align: center;
+		background: black;
+		color: white;
+		width: 400px;
+		margin: 0 auto;
+		padding: 20px;
+		font-size: 80px;
+		margin-top: 100px;
+	}
+</style>
+
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<div id="clock">00:00:00</div>
+
+
+<script type="text/javascript">
+
+var clockDiv = document.getElementById("clock");
+
+function getTime(){
+
+	function padDigit(num){
+		if(num < 10){
+			var number = "0" + num;
+			return number;
+		} else {
+			return num;
+		}
+	}
+
+
+	var now = new Date();
+	var seconds = padDigit(now.getSeconds());
+	var minutes = padDigit(now.getMinutes());
+	var hours = padDigit((now.getHours() - 12));
+
+	var time = hours + " : " +  minutes + " : " + seconds;
+	return time;
+}
+
+
+
+
+function updateTime(){
+	clockDiv.innerHTML = getTime();
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+
+</script>
+
+</body>
+</html>
+
