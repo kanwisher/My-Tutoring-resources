@@ -163,12 +163,12 @@ var name = "David"; //assign a value to a variable named name
 function sayHello(poop, bread) { //declare a function with 2 parameters, these are just placeholders for what gets passed in later, remember we aren't calling the function yet, just creating it.
 
     console.log(poop + " " + bread); //so now whatever was passed in as poop, gets called anytime we say poop
-    console.log(poop + poop + poop + poop) //I can use it as many times as I want, and poop will always refer to the value that was passed in
+    console.log(poop + " " + poop + " " + poop + " " + poop) //I can use it as many times as I want, and poop will always refer to the value that was passed in
 }
 
 sayHello(message, name); ///now we're actually calling the function, the position we pass our values in matters! so now in our function, poop REALLY means message which REALLY means "hello". Trace it back!
 //output: "hello David"
-//output: "hello hello hello hello hello"
+//output: "hello hello hello hello"
 
 //just to drive it home, let's do the EXACT same thing, except this time we are going to reverse the parameters we pass:
 
@@ -177,12 +177,12 @@ var name = "David";
 
 function sayHello(poop, bread) {
     console.log(poop + " " + bread);
-    console.log(poop + poop + poop + poop)
+    console.log(poop + " " + poop + " " + poop + " " + poop)
 }
 
 sayHello(name, message); //now when we pass in our arguments in reverse, our output changes...make you understand why
 //output: "David hello"
-//output: "David David David David David"
+//output: "David David David David"
 
 
 //moving on...
