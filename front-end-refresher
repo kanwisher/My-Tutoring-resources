@@ -1,0 +1,23 @@
+Practice until you can do these things from memory
+//HTML
+1. Write an HTML div element with a class of "box" and an id of "first-container"
+//CSS
+1. Write CSS for the class "box" to give it a height of "50px" and a width of "50px":
+2. Write CSS for the id "first-container" to give it a "background-color" of "red":
+//Javascript
+1. Create a variable named myNumber and assign it any number
+2. Create a variable named myString and assign it any string
+3. Create a variable named myBoolean and assign it any boolean
+4. Create a variable named myArray and an assign it an array of two numbers, two strings and one boolean
+5. Create a variable named myObject and assign it an object with a single property and value
+6. Write a "for loop" that logs numbers 1 through 10 to the console
+7. Using "vanilla" javascript, select our HTML element by its id and assign it to a variable
+8. Write a function that alerts "hello", give your function an appropriate name
+//JQuery
+1. Select our first HTML element (from HTML section) by its class name and assign it to a variable
+2. Select our first HTML element (from HTML section) by its id and assign it to a variable
+3. Create a new HTML element "div" and assign it to a variable
+4. Add a class to the HTML element we created in step 3
+5. Take the element you just created and append it inside of the id of "first-container"
+**Challenge**
+Write a function that takes a parameter "message" and console logs the "message" that was passed into the function, then call your function with an argument "This is my message!"
