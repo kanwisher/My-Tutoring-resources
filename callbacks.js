@@ -11,7 +11,7 @@
 
 
 
-//a function and a function call
+//a function then function call
 
 function sayHello() {
     console.log("hello");
@@ -49,7 +49,7 @@ sayHello(); //output: "hello"
 
 
 
-//a function with a parameter and a function call
+//a function with a parameter then function call
 
 function sayHello(message) {
     console.log(message);
@@ -84,7 +84,7 @@ sayHello("hello"); //output: "hello"
 
 
 
-//a function with 2 parameters and a function call
+//a function with 2 parameters then function call
 
 function sayHello(message, name) {
     console.log(message + " " + name);
@@ -130,7 +130,7 @@ sayHello("hello", "David"); //output: "hello David"
 
 
 
-//a function with 2 parameters that are passed in from variables and a function call
+//a function with 2 parameters that are passed in from variables then function call
 
 var message = "hello";
 var name = "David";
@@ -140,6 +140,30 @@ function sayHello(messageStr, nameStr) {
 }
 
 sayHello(message, name); //output: "hello David"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //remember we can call our parameters whatever we want
 
@@ -152,7 +176,7 @@ function sayHello(poop, bread) {
 
 sayHello(message, name); //output: "hello David"
 
-
+///////////////////////////
 
 //lets break this one down:
 
@@ -169,6 +193,11 @@ function sayHello(poop, bread) { //declare a function with 2 parameters, these a
 sayHello(message, name); ///now we're actually calling the function, the position we pass our values in matters! so now in our function, poop REALLY means message which REALLY means "hello". Trace it back!
 //output: "hello David"
 //output: "hello hello hello hello"
+
+
+
+//////////////////
+
 
 //just to drive it home, let's do the EXACT same thing, except this time we are going to reverse the parameters we pass:
 
@@ -233,7 +262,7 @@ sayHello(name, message); //now when we pass in our arguments in reverse, our out
 
 
 
-//a function with 1 parameter that is passed an object and a function call
+//a function with 1 parameter that is passed an object then a function call
 
 var data = {
     message: "hello",
@@ -249,7 +278,7 @@ sayHello(data.message, data.name); //output: "hello David"
 
 
 
-//a rewrite of the above function to accept 1 parameter, where we will pass an object and a function call
+//a rewrite of the above function to accept 1 parameter, where we will pass an object then a function call
 
 var data = {
     message: "hello",
@@ -303,13 +332,13 @@ sayHello(data);  //output: "hello David"
 
 
 
-//so we can pass strings, and numbers, and objects, and booleans into a function.... can you pass functions????
+//so wait...we can pass strings, and numbers, and objects, and booleans into a function.... can you pass functions????
 
 
 YESS!!!!!
 
 
-//declaring a function then passing that function as a parameter to a different function and then calling the function
+//declaring a function then passing the function you just declared as a parameter ...to a different function and then calling the function
 
 function sayHello() {
     console.log("hello");
@@ -321,7 +350,7 @@ function runParam(cb) {
 
 runParam(sayHello); //output: "hello"
 
-//notice we just pass just the function sayHello, we don't call it by passing it "sayHello()" Why do you thnk that is?
+//notice we pass just the function sayHello, we don't call it by passing it "sayHello()" Why do you thnk that is?
 
 
 
@@ -369,7 +398,7 @@ runParam(sayHello); //output: "hello"
 
 
 
-//declaring a function and passing 2 parameters, 1 is a function, 1 is a string. Yes, console.log() is a function
+//declaring a function and passing 2 parameters, 1 is a function, 1 is a string. Yes, console.log() is a function (more accurately a method)
 
 function runParam(cb, message) {
     cb(message);
@@ -413,7 +442,7 @@ runParam(console.log, "hello"); //output: "hello"
 
 
 
-//declaring a function and passing 3 parameters, 1 is a function, 2 are strings
+//declaring a function and passing 3 parameters, 1 is a function, 2 are strings then calling the function
 
 function runParam(cb, message, name) {
     cb(message + " " + name);
@@ -523,9 +552,8 @@ sayThing(beAFunction); //output function(){}
 
 //so great, I can do your examples, what is a callback?
 
-/*A callback function,
- is a function that is passed to another function (let’s call this other function “otherFunction”) as a parameter,
-  and the callback function is called (or executed) inside the otherFunction. */
+/*A callback function is a function that is passed to another function as a parameter (let’s call this function “otherFunction”),
+  and this function parameter is called (or executed) inside the "otherFunction". */
 
 
 
@@ -562,7 +590,7 @@ $("#someId").on("click", function () {
 //hold on how is that a callback?!?!
 
 //.on() is just a function or really a method on the jQuery object
-//a function where we are passing it 2 parameters so:
+//a function where we are passing it 2 parameters... so:
 //.on(action, cb);
 
 // if we were to look at this function it might look something like this (for illustration only!);
