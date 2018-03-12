@@ -207,4 +207,34 @@
 
 
 /////const
+if(2 === 2){
+    const win = true;
+}
+console.log(win) //undefined
+//has block scope 
+
+const cat = "garfield";
+cat = "Felix" //error cat is read only
+
+//object and array contents CAN be changed
+const person = {
+    name: "David",
+    age: 31
+}
+person.name = "Mirsada" //works
+
+const numbers = [1, 2, 3, 4, 5];
+numbers.push(6); //works
+
+
+
+//Object literal (sweet!)
+
+var name = "David";
+var age = 31;
+var city = "Charlotte";
+
+var person = {name, age, city};
+
+console.log(person); // {"name":"David","age":31,"city":"Charlotte"}
 
