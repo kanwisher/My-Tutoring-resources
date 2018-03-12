@@ -230,11 +230,30 @@ numbers.push(6); //works
 
 //Object literal (sweet!)
 
-var name = "David";
-var age = 31;
-var city = "Charlotte";
+const name = "David";
+const age = 31;
+const city = "Charlotte";
 
 var person = {name, age, city};
 
 console.log(person); // {"name":"David","age":31,"city":"Charlotte"}
 
+//can write functions inline now
+
+//ES5
+
+var person = {
+    sayHello : function(){
+        console.log("hello");
+    }
+}
+person.sayHello();
+
+//ES6
+
+const person = {
+    sayHello(){
+        console.log("hello");
+    }
+}
+person.sayHello();
