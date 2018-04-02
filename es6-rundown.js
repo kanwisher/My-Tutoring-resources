@@ -34,15 +34,6 @@
 
 {
     // before
-    var d = "I can use a function to get the total of " + addNumbers(8, 1); // I can use a function to get the total of 9
-
-    // ES6
-    var D = `I can use a function to get the total of ${addNumbers(8, 1)}`; // I can use a function to get the total of 9    
-}
-
-
-{
-    // before
     var e = "When I type" +
             "these line breaks" +
             "don't matter" +
@@ -289,7 +280,7 @@ const [productName, productPrice] = product;
 console.log(productName); // "television"
 console.log(productPrice); // 2000.99
 
-// lead with commands
+// lead with commas
 // old
 const numbers = [1, 2, 3, 4, 5];
 var second = numbers[1];
