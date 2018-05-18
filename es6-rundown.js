@@ -297,3 +297,53 @@ console.log(randomNum) // 1
 let [firstLetter, , , , fifthLetter] = "Javascript";
 console.log(firstLetter); // J
 console.log(fifthLetter); // s
+
+
+//Destructuring Objects
+// old
+var animals = {
+ dog : "fido",
+ cat : "garfield",
+ bird : "toucan sam"
+}
+
+var dog = animals.dog;
+var cat = animals.cat;
+var bird = animals.bird;
+console.log(dog) //fido
+console.log(cat) //garfield
+console.log(bird) //toucan sam
+
+// new
+const animals = {
+ dog : "fido",
+ cat : "garfield",
+ bird : "toucan sam"
+}
+
+const {dog, cat, bird} = animals;
+console.log(dog) //fido
+console.log(cat) //garfield
+console.log(bird) //toucan sam
+
+// rename variable
+
+const {bird: favBird} = animals;
+console.log(bird) //undefined
+console.log(favBird) //toucan sam 
+
+
+// nested objects
+const pets = {
+    fido : {},
+    garfield: {
+        species: "cat",
+        age: 30
+    }
+}
+
+const { garfield: {age}} = pets;
+
+console.log(age) //30
+
+        
