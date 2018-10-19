@@ -1,0 +1,49 @@
+var el = document.getElementById("11400"); // <span id="11400" class="aui-avatar aui-avatar-large aui-avatar-project">…</span>
+var eventType = "click";
+var callback = function() { console.log("testing 1 2 3")};
+
+function createEventTrigger(el, eventType, callback) {
+    el.addEventListener(eventType, callback); 
+    saveCallback(el, eventType, callback);
+}
+
+
+function saveCallback(el, eventType, callback) {
+	if (el.callbacks && Array.isArray(el.callbacks)){
+		el.callbacks.push({ type: eventType, callback: callback})
+	} else {
+ 		el.callbacks = [{type: eventType, callback: callback}];
+	}
+}
+
+function removeEventTriggers(el) {
+    if (el.callbacks) {
+        var count = 0;
+        el.callbacks.forEach(function(bundle, idx, arr) {
+            var type = bundle.type;
+            var cb = bundle.callback;
+            el.removeEventListener(type, cb);
+            count += 1;
+        });
+        el.callbacks = []; // clear data
+        console.log("Removed " + count + "listeners");
+    }
+}
+
+function removeEventTriggersByType(el, eventType) {
+    if (el.callbacks) {
+        var count = 0;
+
+        for (var i = el.callbacks.length - 1; i >= 0; i -= 1) { // forEach won't work as expected here
+            var current = el.callbacks[i];
+            var type = current.type;
+            var cb = curent.callback;
+            if (eventType === type) {
+                el.removeEventListener(type, cb);
+                count += 1;
+                el.callbacks.splice(i, 1); // remove current idx from array
+            }
+        }
+        console.log("Removed " + count + " listeners for type " + eventType);
+    }
+}
