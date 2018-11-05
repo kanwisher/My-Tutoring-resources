@@ -1,0 +1,20 @@
+Node notes
+
+Install node from website
+
+
+browser: window
+node: global
+
+browser: document
+node: process
+
+v8, used in node and chrome
+
+non-blocking I/O (input output)...database read write...changing files on file system...making http request to another web server
+syncronous vs asyncronous
+
+Node is single threaded, but, it is non-blocking so it's not a problem, huge open source ecosystem
+Multi-threaded applications could fire off at the same time, but it would require better cpu power and better ram (to create new threads), and doesn't scale as easily
+
+
