@@ -1,0 +1,48 @@
+
+
+function printLetter(letter, cb) {
+    setTimeout(() => {
+        console.log(letter);
+        if (cb) {
+            cb();
+        }
+    }, Math.floor(Math.random() * 1000) + 1
+)}
+
+printLetter("A", () => {
+    printLetter("B", () => {
+        printLetter("C", () => {
+            console.log("all done!");
+        });
+    });
+});
+
+function printLetter2(letter, int = 0) {
+    return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(letter);
+                console.log(int);
+                resolve(5);
+            }, Math.floor(Math.random() * 1000) + 1)
+    
+    });
+}
+
+/* When you return something from a then() callback, it's a bit magic. If you return a value, the next then() is called with that value. However, if you return something promise-like, the next then() waits on it, and is only called when that promise settles (succeeds/fails). */
+
+// printLetter2("A")
+// .then((int) => printLetter2("B", int))
+// .then((int) => printLetter2("C", int))
+// .then(() => console.log("all done"))
+
+
+async function printAll() {
+    var test = await printLetter2("A");
+    console.log("what");
+    await printLetter2("B", test);
+    console.log("huh");
+    await printLetter2("C", test);
+}
+
+printAll();
+console.log("Did I run last?");
